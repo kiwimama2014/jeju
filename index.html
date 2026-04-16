@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Web Project - 202604161059</title>
+    
+    <!-- Reset CSS (Optional but recommended) -->
+    <link href="https://www.cjc116.com/css/reset.css" rel="stylesheet">
+    
+    <!-- Your CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>濟州島六天五夜 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;600;900&family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300;1,500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ocean:#1b6fa8;--ocean-d:#0d4772;--sky:#5db8e8;
+  --canola:#f5c518;--canola-l:#fef3b0;--canola-d:#c89a00;
+  --sand:#faf6ec;--paper:#f7f4ed;--ink:#1c1c1c;--muted:#6b6b6b;
+  --green:#1a8a4a;--coral:#d9622a;--warn:#e05c2a;--ok:#2e8b57;
+  --purple:#7c5cbf;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--paper);color:var(--ink);font-family:'Noto Serif TC',serif;font-weight:300;}
+
+/* ─── COVER ─── */
+.cover{
+  min-height:100vh;
+  background:linear-gradient(160deg,var(--ocean-d) 0%,#0a3d6a 45%,#1a5c1a 100%);
+  position:relative;overflow:hidden;
+  display:grid;grid-template-rows:auto 1fr auto;
+  padding:2.5rem 2.5rem 2rem;
+}
+.cover::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 70% 40% at 50% 85%,rgba(245,197,24,.18) 0%,transparent 60%),
+    radial-gradient(ellipse 50% 30% at 80% 10%,rgba(93,184,232,.12) 0%,transparent 50%),
+    radial-gradient(ellipse 30% 20% at 10% 90%,rgba(245,197,24,.08) 0%,transparent 40%);
+}
+.cover::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:120px;
+  background:repeating-linear-gradient(90deg,rgba(245,197,24,.15) 0px,rgba(245,197,24,.15) 2px,transparent 2px,transparent 28px);
+  mask-image:linear-gradient(to top,rgba(0,0,0,.4),transparent);
+}
+.cover-top{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:flex-start;}
+.cover-tag{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.25em;color:var(--canola);text-transform:uppercase;}
+.cover-main{position:relative;z-index:1;display:flex;flex-direction:column;justify-content:center;padding:1.5rem 0;}
+.cover-eyebrow{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.3em;color:rgba(255,255,255,.45);text-transform:uppercase;margin-bottom:1.2rem;}
+.cover-title{font-family:'Cormorant Garamond',serif;font-size:clamp(3.5rem,13vw,7.5rem);font-weight:300;color:#fff;line-height:1;letter-spacing:-.01em;}
+.cover-title em{font-style:italic;color:var(--canola);font-size:.55em;display:block;margin-top:.2em;letter-spacing:.05em;}
+.cover-line{width:44px;height:2px;background:var(--canola);margin:1.8rem 0;opacity:.7;}
+.cover-meta{display:flex;gap:2rem;flex-wrap:wrap;}
+.meta-item .lbl{font-family:'DM Mono',monospace;font-size:.52rem;letter-spacing:.2em;color:rgba(255,255,255,.35);text-transform:uppercase;display:block;margin-bottom:.25rem;}
+.meta-item .val{color:rgba(255,255,255,.85);font-size:.88rem;font-weight:400;}
+.cover-bottom{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:flex-end;border-top:1px solid rgba(255,255,255,.1);padding-top:1.2rem;font-family:'DM Mono',monospace;font-size:.55rem;color:rgba(255,255,255,.2);letter-spacing:.15em;}
+
+/* ─── NOTICE BANNER ─── */
+.notice-bar{
+  background:linear-gradient(90deg,#2a1a6e,#4a2a9e);
+  padding:1rem 2.5rem;
+  display:flex;align-items:flex-start;gap:.8rem;
+}
+.notice-bar .ni{font-size:1.1rem;flex-shrink:0;margin-top:.05rem;}
+.notice-bar .nt{
+  font-family:'Noto Serif TC',serif;font-size:.8rem;
+  color:rgba(255,255,255,.9);line-height:1.6;
+}
+.notice-bar .nt strong{color:var(--canola);font-weight:600;}
+
+/* ─── FLIGHTS ─── */
+.flights{background:var(--ocean);padding:1.6rem 2.5rem;display:flex;align-items:center;}
+.fl{flex:1;}
+.fl .ft{font-family:'DM Mono',monospace;font-size:.52rem;letter-spacing:.22em;color:rgba(255,255,255,.45);text-transform:uppercase;display:block;margin-bottom:.25rem;}
+.fl .fn{font-family:'Cormorant Garamond',serif;font-size:1.7rem;color:#fff;font-weight:600;line-height:1;}
+.fl .ft2{color:rgba(255,255,255,.55);font-size:.72rem;margin-top:.2rem;font-family:'DM Mono',monospace;}
+.fl-sep{color:rgba(255,255,255,.2);font-size:1.2rem;padding:0 1.4rem;}
+
+/* ─── BUDGET BOX ─── */
+.budget-box{
+  background:linear-gradient(135deg,#0e6b72,#0d4f6e);
+  margin:0 0 0;padding:2rem 2.5rem;
+}
+.budget-title{
+  font-family:'Cormorant Garamond',serif;font-size:1.3rem;
+  color:#fff;font-weight:300;margin-bottom:.6rem;
+  display:flex;align-items:center;gap:.6rem;
+}
+.budget-subtitle{
+  font-size:.75rem;color:rgba(255,255,255,.65);
+  margin-bottom:1rem;line-height:1.5;
+}
+.budget-subtitle strong{color:rgba(255,255,255,.9);}
+.budget-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;}
+@media(max-width:500px){.budget-grid{grid-template-columns:1fr;}}
+.budget-card{background:rgba(255,255,255,.12);border-radius:10px;padding:.9rem 1.1rem;}
+.budget-card .bc-label{font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.55);display:block;margin-bottom:.3rem;}
+.budget-card .bc-val{font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:#fff;font-weight:600;line-height:1;}
+.budget-card .bc-sub{font-size:.7rem;color:rgba(255,255,255,.55);margin-top:.2rem;}
+.budget-note{
+  margin-top:1rem;padding:.7rem .9rem;
+  background:rgba(0,0,0,.18);border-radius:8px;
+  font-size:.73rem;color:rgba(255,255,255,.7);line-height:1.6;
+}
+.budget-note strong{color:rgba(255,255,255,.95);}
+
+/* ─── WRAP ─── */
+.wrap{max-width:840px;margin:0 auto;padding:3.5rem 1.5rem 5rem;}
+.sec-head{display:flex;align-items:baseline;gap:1rem;margin-bottom:3rem;border-bottom:2px solid var(--canola);padding-bottom:.9rem;}
+.sec-head h2{font-family:'Cormorant Garamond',serif;font-size:1.75rem;font-weight:300;color:var(--ink);}
+.sec-head span{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.2em;color:var(--muted);text-transform:uppercase;}
+
+/* ─── DAY BLOCK ─── */
+.day{margin-bottom:2rem;border-radius:14px;overflow:hidden;box-shadow:0 2px 22px rgba(0,0,0,.07);animation:up .45s ease both;}
+@keyframes up{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+.day:nth-child(2){animation-delay:.06s}.day:nth-child(3){animation-delay:.12s}
+.day:nth-child(4){animation-delay:.18s}.day:nth-child(5){animation-delay:.24s}
+.day:nth-child(6){animation-delay:.30s}
+
+.day-head{display:flex;align-items:stretch;}
+.day-num{width:72px;flex-shrink:0;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:1.4rem .8rem;}
+.day-num .n{font-family:'Cormorant Garamond',serif;font-size:2.6rem;color:#fff;line-height:1;font-weight:300;}
+.day-num .w{font-family:'DM Mono',monospace;font-size:.5rem;letter-spacing:.18em;color:rgba(255,255,255,.6);text-transform:uppercase;margin-top:.15rem;}
+.day-info{flex:1;background:#fff;padding:1.1rem 1.4rem;border-bottom:1px solid rgba(0,0,0,.06);display:flex;flex-direction:column;justify-content:center;}
+.day-theme{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;color:var(--ink);}
+.day-date{font-family:'DM Mono',monospace;font-size:.62rem;color:var(--muted);letter-spacing:.06em;margin-top:.22rem;}
+
+.d1 .day-num{background:linear-gradient(150deg,var(--ocean),var(--ocean-d));}
+.d2 .day-num{background:linear-gradient(150deg,#2e7d52,#1a4a30);}
+.d3 .day-num{background:linear-gradient(150deg,#1b6a9a,#0d4060);}
+.d4 .day-num{background:linear-gradient(150deg,#8b4513,#5a2a08);}
+.d5 .day-num{background:linear-gradient(150deg,var(--canola-d),#8a6a00);}
+.d6 .day-num{background:linear-gradient(150deg,#2a2a3e,#15152a);}
+
+/* ─── EVENTS ─── */
+.events{background:#fff;padding:.7rem 1.2rem 1.2rem 1.2rem;}
+.event{display:flex;gap:.9rem;padding:.7rem 0;border-bottom:1px solid rgba(0,0,0,.04);}
+.event:last-child{border-bottom:none;padding-bottom:0;}
+.ev-icon{width:30px;height:30px;border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:.82rem;margin-top:2px;}
+.ic-eat{background:#fef0e8;}.ic-go{background:#e8f3fb;}
+.ic-note{background:#fefae8;}.ic-ship{background:#e8eef8;}
+.ic-hotel{background:#f0e8fe;}.ic-warn{background:#fff3e8;}
+.ev-body{flex:1;min-width:0;}
+.ev-time{font-family:'DM Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.05em;margin-bottom:.08rem;}
+.ev-title{font-size:.88rem;font-weight:600;color:var(--ink);line-height:1.35;}
+.ev-desc{font-size:.74rem;color:var(--muted);margin-top:.18rem;line-height:1.5;}
+
+/* ─── HOTEL CARD ─── */
+.hotel-card{
+  background:#f5f0fe;border-radius:8px;padding:.55rem .8rem;margin-top:.45rem;
+  border-left:3px solid var(--purple);
+}
+.hotel-tag{font-family:'DM Mono',monospace;font-size:.52rem;letter-spacing:.2em;color:var(--purple);text-transform:uppercase;margin-bottom:.18rem;}
+.hotel-name{font-size:.82rem;font-weight:600;color:var(--ink);}
+.hotel-addr{font-size:.72rem;color:var(--muted);margin-top:.1rem;line-height:1.4;}
+
+/* ─── WARNING CARD ─── */
+.warn-card{
+  background:#fff8f0;border-radius:8px;padding:.55rem .8rem;margin-top:.45rem;
+  border-left:3px solid var(--warn);
+}
+.warn-tag{font-family:'DM Mono',monospace;font-size:.52rem;letter-spacing:.2em;color:var(--warn);text-transform:uppercase;margin-bottom:.18rem;}
+.warn-item{font-size:.76rem;color:var(--ink);line-height:1.6;padding:.1rem 0;}
+.warn-item::before{content:'⚠ ';color:var(--warn);}
+
+/* ─── RESTAURANT CARD ─── */
+.resto{background:var(--sand);border-radius:8px;padding:.55rem .8rem;margin-top:.45rem;border-left:3px solid var(--coral);}
+.resto-tag{font-family:'DM Mono',monospace;font-size:.52rem;letter-spacing:.2em;color:var(--coral);text-transform:uppercase;margin-bottom:.18rem;}
+.resto-desc{font-size:.76rem;color:var(--ink);line-height:1.5;}
+.price-row{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.3rem;}
+.price-pill{display:inline-flex;align-items:center;gap:.2rem;font-family:'DM Mono',monospace;font-size:.58rem;border-radius:5px;padding:.18rem .45rem;}
+.price-krw{color:var(--canola-d);background:rgba(200,154,0,.1);border:1px solid rgba(200,154,0,.25);}
+.price-twd{color:var(--ocean);background:rgba(27,111,168,.08);border:1px solid rgba(27,111,168,.2);}
+.open-badge{display:inline-flex;align-items:center;gap:.25rem;font-family:'DM Mono',monospace;font-size:.56rem;border-radius:5px;padding:.18rem .45rem;margin-top:.3rem;}
+.open-ok{background:rgba(46,139,87,.08);color:var(--ok);border:1px solid rgba(46,139,87,.22);}
+.open-warn{background:rgba(224,92,42,.08);color:var(--warn);border:1px solid rgba(224,92,42,.25);}
+
+/* ─── ATTRACTION CARD ─── */
+.attr{background:#eef6fb;border-radius:8px;padding:.55rem .8rem;margin-top:.45rem;border-left:3px solid var(--ocean);}
+.attr-tag{font-family:'DM Mono',monospace;font-size:.52rem;letter-spacing:.2em;color:var(--ocean);text-transform:uppercase;margin-bottom:.18rem;}
+.attr-desc{font-size:.76rem;color:var(--ink);line-height:1.5;}
+
+/* ─── MARKET FOOD ─── */
+.mkt{background:#f5fbf5;border-radius:8px;padding:.55rem .8rem;margin-top:.45rem;border-left:3px solid var(--green);}
+.mkt-tag{font-family:'DM Mono',monospace;font-size:.52rem;letter-spacing:.2em;color:var(--green);text-transform:uppercase;margin-bottom:.28rem;}
+.mkt-item{display:flex;align-items:flex-start;gap:.5rem;padding:.3rem 0;border-bottom:1px dashed rgba(0,0,0,.06);}
+.mkt-item:last-child{border-bottom:none;padding-bottom:0;}
+.mkt-no{font-family:'DM Mono',monospace;font-size:.6rem;color:#fff;background:var(--green);border-radius:4px;padding:.1rem .32rem;flex-shrink:0;margin-top:.05rem;}
+.mkt-text{flex:1;}
+.mkt-name{font-size:.78rem;font-weight:600;color:var(--ink);}
+.mkt-note{font-size:.7rem;color:var(--muted);margin-top:.08rem;line-height:1.4;}
+.mkt-btns{display:flex;gap:.35rem;flex-wrap:wrap;margin-top:.3rem;}
+
+/* ─── MAP BUTTONS ─── */
+.map-btns{display:flex;gap:.38rem;flex-wrap:wrap;margin-top:.42rem;}
+.mb{display:inline-flex;align-items:center;gap:.26rem;font-family:'DM Mono',monospace;font-size:.58rem;border-radius:5px;padding:.22rem .52rem;cursor:pointer;text-decoration:none;transition:all .15s;white-space:nowrap;}
+.mb svg{width:9px;height:9px;flex-shrink:0;}
+.mb-naver{color:var(--green);background:rgba(26,138,74,.07);border:1px solid rgba(26,138,74,.22);}
+.mb-naver:hover{background:var(--green);color:#fff;border-color:var(--green);}
+.mb-google{color:#1a73e8;background:rgba(26,115,232,.07);border:1px solid rgba(26,115,232,.22);}
+.mb-google:hover{background:#1a73e8;color:#fff;border-color:#1a73e8;}
+.drive{display:inline-flex;align-items:center;gap:.24rem;font-family:'DM Mono',monospace;font-size:.56rem;color:var(--ocean);background:rgba(27,111,168,.08);border-radius:4px;padding:.14rem .42rem;margin-top:.28rem;}
+
+/* ─── FOOTER ─── */
+footer{background:var(--ocean-d);color:rgba(255,255,255,.3);text-align:center;padding:2.5rem 1.5rem;font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.15em;}
+footer strong{display:block;font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--canola);font-weight:300;margin-bottom:.5rem;}
+
+@media(max-width:500px){
+  .cover{padding:2rem 1.5rem 2rem;}
+  .flights,.budget-box,.notice-bar{padding-left:1.5rem;padding-right:1.5rem;}
+  .wrap{padding:2.5rem 1rem 4rem;}
+}
+
+/* PIN icon helper */
+.pin{width:9px;height:9px;}
+</style>
+</head>
+<body>
+
+<!-- ─── COVER ─── -->
+<section class="cover">
+  <div class="cover-top">
+    <span class="cover-tag">Travel Guide · 2026</span>
+    <span class="cover-tag">제주도 · Jeju</span>
+  </div>
+  <div class="cover-main">
+    <p class="cover-eyebrow">Jeju Island · Korea · 油菜花 × 大海</p>
+    <h1 class="cover-title">濟州島<em>六天五夜</em></h1>
+    <div class="cover-line"></div>
+    <div class="cover-meta">
+      <div class="meta-item"><span class="lbl">出發</span><span class="val">2026 / 4 / 28（週二）</span></div>
+      <div class="meta-item"><span class="lbl">返回</span><span class="val">2026 / 5 / 3（週日）</span></div>
+      <div class="meta-item"><span class="lbl">人數</span><span class="val">11 大 2 小</span></div>
+    </div>
+  </div>
+  <div class="cover-bottom">
+    <span>JEJU · 제주도 · 濟州島</span>
+    <span>6D 5N · 13 TRAVELERS</span>
+  </div>
+</section>
+
+<!-- ─── 重要提醒 ─── -->
+<div class="notice-bar">
+  <span class="ni">📡</span>
+  <div class="nt">
+    <strong>【重要提醒】網卡請使用韓國原生電信卡（SIM 卡或 eSIM 皆可）</strong><br>
+    請選擇韓國三大原生電信商：<strong>SKT、KT 或 LGU+</strong> 的 SIM 卡或 eSIM，避免使用 MVNO 轉售卡。韓國部分在地 App（如 Kakao T 叫車、Catch Table 排號、Naver Pay 等）需綁定韓國電信號碼進行 SMS 驗證，<strong>使用非原生卡可能收不到驗證碼</strong>，導致 App 無法正常使用。建議出發前預先購買，確保全程暢行。
+  </div>
+</div>
+
+<!-- ─── 公費預算 ─── -->
+<div class="budget-box">
+  <div class="budget-title">💰 飲食公費（請於出發前繳交給總務股長）</div>
+  <div class="budget-subtitle">
+    本團共 <strong>11 大 2 小</strong>（1 位國小生 + 1 位嬰兒）。韓國餐廳大多有低消規定，<strong>國小以上學童需點一份主餐</strong>，建議以 <strong>12 人</strong>估算（嬰兒除外）。<br>
+    ⚠️ <strong>國小生暫定繳交 NT$2,500，待確認！</strong>
+  </div>
+  <div class="budget-grid">
+    <div class="budget-card">
+      <span class="bc-label">成人每人（台幣）</span>
+      <div class="bc-val">NT$ 5,000</div>
+      <div class="bc-sub">11 位大人 × NT$5,000</div>
+    </div>
+    <div class="budget-card">
+      <span class="bc-label">國小生（台幣）</span>
+      <div class="bc-val">NT$ 2,500</div>
+      <div class="bc-sub">待確認⚠️</div>
+    </div>
+    <div class="budget-card">
+      <span class="bc-label">公費總額（台幣）</span>
+      <div class="bc-val">NT$ 57,500</div>
+      <div class="bc-sub">11×5,000 + 1×2,500</div>
+    </div>
+    <div class="budget-card">
+      <span class="bc-label">公費總額（韓幣）</span>
+      <div class="bc-val">₩ 2,500,000</div>
+      <div class="bc-sub">11×₩215,000 + 1×₩107,500</div>
+    </div>
+  </div>
+  <div class="budget-note">
+    ⚠ 公費涵蓋行程中所有指定餐廳費用，餘額作為臨時備用金。市場小吃、咖啡、個人飲料等費用請各自承擔。嬰兒不計入。
+  <br>  ⚠ 由於wowpass有餘額和儲值上限，建議各車推派一位成員作總務股長，共三位，共同管理公費。
+  </div>
+</div>
+
+<!-- ─── FLIGHTS ─── -->
+<div class="flights">
+  <div class="fl">
+    <span class="ft">去程 Outbound · 台灣虎航</span>
+    <div class="fn">IT 654</div>
+    <div class="ft2">✈ TPE T1 桃園國際機場 Terminal 1</div>
+    <div class="ft2">06:40 → CJU 09:35 &nbsp;·&nbsp; 2026-04-28</div>
+  </div>
+  <div class="fl-sep">⇄</div>
+  <div class="fl" style="text-align:right">
+    <span class="ft">回程 Return · 台灣虎航</span>
+    <div class="fn">IT 655</div>
+    <div class="ft2">✈ CJU 濟州國際機場</div>
+    <div class="ft2">10:40 → TPE 11:45 &nbsp;·&nbsp; 2026-05-03</div>
+  </div>
+</div>
+
+<!-- ─── ITINERARY ─── -->
+<div class="wrap">
+  <div class="sec-head"><h2>行程總覽</h2><span>Itinerary Overview</span></div>
+
+  <!-- ═══ SVG pin helper ═══ -->
+  <svg style="display:none"><symbol id="pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></symbol></svg>
+
+  <!-- ══ DAY 1 ══ -->
+  <div class="day d1">
+    <div class="day-head">
+      <div class="day-num"><span class="n">01</span><span class="w">Day</span></div>
+      <div class="day-info">
+        <div class="day-theme">西部探索</div>
+        <div class="day-date">4 月 28 日（週二）· West Side</div>
+      </div>
+    </div>
+    <div class="events">
+
+      <!-- 樂天租車 -->
+      <div class="event">
+        <div class="ev-icon ic-note">🚗</div>
+        <div class="ev-body">
+          <div class="ev-time">10:30</div>
+          <div class="ev-title">抵達 Jeju Auto House（樂天租車機場服務台）</div>
+          <div class="warn-card">
+            <div class="warn-tag">🚗 取車流程說明</div>
+            <div class="warn-item">抵達後前往樂天租車 <strong>GATE 2</strong> 機場服務台，提供預訂時使用的<strong>姓名</strong>即可取車。</div>
+            <div class="warn-item">從濟州機場 <strong>5 號門</strong>出來後，穿過人行道過馬路右轉，繼續前往接駁車停靠站（停車場 1–4 號區域），每 <strong>8 分鐘</strong>一班接駁車。</div>
+          </div>
+          <div class="map-btns">
+            <a class="mb mb-naver" onclick="openNaver('제주오토하우스 롯데렌터카')"><svg><use href="#pin"/></svg>Jeju Auto House Naver</a>
+            <a class="mb mb-google" href="https://maps.google.com/?q=Jeju+Auto+House+롯데렌터카" target="_blank"><svg><use href="#pin"/></svg>Google</a>
+            <a class="mb mb-naver" href="https://www.lotterentacar.net/hp/chn/carLife/jejuAuto.do" target="_blank" style="color:#e07020;background:rgba(224,112,32,.08);border-color:rgba(224,112,32,.3);">🔗 樂天租車官網</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 換錢 -->
+      <div class="event">
+        <div class="ev-icon ic-note">💱</div>
+        <div class="ev-body">
+          <div class="ev-time">11:20</div>
+          <div class="ev-title">換錢：錢Box 濟州分店</div>
+          <div class="ev-desc">濟州市老衡洞 928 — 匯率優惠的專業換錢所</div>
+          <div class="ev-title" style="margin-top:.4rem;font-size:.82rem;">WowPass：君悅飯店（Grand Hyatt Jeju）一樓</div>
+          <div class="ev-desc">飯店大廳一樓自動販賣機購買，方便快速</div>
+          <div class="map-btns">
+            <a class="mb mb-naver" href="https://naver.me/551HplPF" target="_blank"><svg><use href="#pin"/></svg>錢Box Naver</a>
+            <a class="mb mb-google" href="https://maps.google.com/?q=钱Box济州분점+제주시+노형동" target="_blank"><svg><use href="#pin"/></svg>Google</a>
+            <a class="mb mb-naver" onclick="openNaver('그랜드하얏트 제주')"><svg><use href="#pin"/></svg>君悅飯店 Naver</a>
+            <a class="mb mb-google" href="https://maps.google.com/?q=Grand+Hyatt+Jeju" target="_blank"><svg><use href="#pin"/></svg>Google</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 熟成道 -->
+      <div class="event">
+        <div class="ev-icon ic-eat">🍖</div>
+        <div class="ev-body">
+          <div class="ev-time">12:30 – 14:00</div>
+          <div class="ev-title">午餐：熟成道總店（숙성도 제주본점）</div>
+          <div class="resto">
+            <div class="resto-tag">🍽 餐廳資訊</div>
+            <div class="resto-desc">雙重熟成（水浸熟成＋乾式熟成）濟州黑豬肉，主打豬背里肌（뼈등심）與前腿肉（앞다리살），非慣用三層肉部位，全程由服務員代烤。</div>
+            <div class="price-row">
+              <span class="price-pill price-krw">💴 ₩30,000–50,000／人</span>
+              <span class="price-pill price-twd">🇹🇼 約 NT$700–1200／人</span>
+            </div>
+            <div class="open-badge open-ok">✅ 4/28（二）營業 · 每日 11:30–22:00</div>
+            <div class="open-badge" style="background:rgba(27,111,168,.08);color:var(--ocean);border:1px solid rgba(27,111,168,.25);margin-top:.3rem;">📋 已於 Catch Table 完成訂位</div>
+          </div>
+          <div class="map-btns">
+            <a class="mb mb-naver" onclick="openNaver('숙성도 제주본점')"><svg><use href="#pin"/></svg>Naver</a>
+            <a class="mb mb-google" href="https://maps.google.com/?q=숙성도+제주본점" target="_blank"><svg><use href="#pin"/></svg>Google</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 小馬燈塔 -->
+      <div class="event">
+        <div class="ev-icon ic-go">🐴</div>
+        <div class="ev-body">
+          <div class="ev-time">14:15</div>
+          <div class="ev-title">小馬燈塔（이호테우해변 말등대）</div>
+          <div class="attr">
+            <div class="attr-tag">📍 景點介紹</div>
+            <div class="attr-desc">濟州西部海灘上兩座可愛的彩色馬造型燈塔，是最具代表性的打卡地標。</div>
+          </div>
+          <div class="map-btns">
+            <a class="mb mb-naver" onclick="openNaver('이호테우해변 말등대')"><svg><use href="#pin"/></svg>Naver</a>
+            <a class="mb mb-google" href="https://maps.google.com/?q=이호테우+말등대+제주" target="_blank"><svg><use href="#pin"/></svg>Google</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 15:00 分組行程 -->
+      <div class="event">
+        <div class="ev-icon ic-go">🔀</div>
+        <div class="ev-body">
+          <div class="ev-time">15:00</div>
+          <div class="ev-title">分組行程（二擇一）</div>
+          <!-- 組A：咖啡街 -->
+          <div class="attr" style="margin-top:.5rem;">
+            <div class="attr-tag">☕ A 組｜涯月咖啡一條街 + 海邊散步</div>
+            <div class="attr-desc">涯月海岸線集結眾多個性咖啡館，坐擁無敵海景，石板路漫步感受濟州特有咖啡文化，是最適合放鬆午後的網紅聖地。</div>
+            <div class="map-btns" style="margin-top:.35rem;">
+              <a class="mb mb-naver" onclick="openNaver('애월 카페거리')"><svg><use href="#pin"/></svg>Naver</a>
+              <a class="mb mb-google" href="https://maps.google.com/?q=애월+카페거리+제주" target="_blank"><svg><use href="#pin"/></svg>Google</a>
+            </div>
+            <!-- UMU 布丁 -->
+            <div style="margin-top:.5rem;padding:.45rem .65rem;background:rgba(255,255,255,.7);border-radius:6px;border-left:2px solid #b07a3a;">
+              <div style="font-family:'DM Mono',monospace;font-size:.5rem;letter-spacing:.18em;color:#8a5a20;text-transform:uppercase;margin-bottom:.15rem;">🍮 順路必吃</div>
+              <div style="font-size:.78rem;font-weight:600;color:var(--ink);">UMU布丁（우무）</div>
+              <div style="font-size:.72rem;color:var(--muted);margin-top:.1rem;line-height:1.4;">濟州人氣甜點店，以天然海藻製成的濃郁手工布丁，口感絲滑細嫩，多種口味選擇。</div>
+              <div class="map-btns" style="margin-top:.3rem;">
+                <a class="mb mb-naver" onclick="openNaver('우무 제주 애월')"><svg><use href="#pin"/></svg>Naver</a>
+                <a class="mb mb-google" href="https://maps.google.com/?q=우무+제주+애월" target="_blank"><svg><use href="#pin"/></svg>Google</a>
+              </div>
+            </div>
+          </div>
+          <!-- 組B：9.81 賽車 -->
+          <div class="attr" style="margin-top:.5rem;background:#eef3fb;border-left-color:#3a6bc9;">
+            <div class="attr-tag" style="color:#3a6bc9;">🏎 B 組｜9.81 Park 重力賽車</div>
+            <div class="attr-desc">利用重力驅動的無動力卡丁賽車，時速可達 60km，在漢拏山美景中競速，刺激又安全，親子同樂皆適宜。</div>
+            <div class="map-btns" style="margin-top:.35rem;">
+              <a class="mb mb-naver" onclick="openNaver('9.81파크 제주')"><svg><use href="#pin"/></svg>Naver</a>
+              <a class="mb mb-google" href="https://maps.google.com/?q=9.81+Park+제주" target="_blank"><svg><use href="#pin"/></svg>Google</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 滿足的商會 ★ 修正版 -->
+      <div class="event">
+        <div class="ev-icon ic-eat">🐟</div>
+        <div class="ev-body">
+          <div class="ev-time">18:00</div>
+          <div class="ev-title">晚餐：滿足的商會 中文店（만족한상회 중문점）</div>
+          <div class="ev-desc">📍 Seogwipo-si，58-5 Jungmunsang-ro（中文觀光區附近）</div>
+          <div class="resto">
+            <div class="resto-tag">🍽 餐廳資訊 — 白帶魚全餐</div>
+            <div class="resto-desc">濟州名物白帶魚（갈치）特色料理餐廳。套餐 ₩68,000–₩122,000 起（雙人套餐含整隻白帶魚去骨切塊、三種生魚片、鹽烤大蝦、醬蟹、泡菜豆腐湯、海菜湯），小菜豐富可免費續加，份量超充足！白帶魚口味清淡鮮嫩，附三種沾醬，是濟州島獨特的必試體驗。</div>
+            <div class="price-row">
+              <span class="price-pill price-krw">💴 雙人套餐 ₩68,000 起（均攤 ₩34,000／人）</span>
+              <span class="price-pill price-twd">🇹🇼 約 NT$790／人起</span>
+            </div>
+            <div class="open-badge open-ok">✅ 4/28（二）營業 · 週三休息 · 10:00–21:00</div>
+          </div>
+          <div class="map-btns">
+            <a class="mb mb-naver" href="https://naver.me/FM9RWuQ9" target="_blank"><svg><use href="#pin"/></svg>Naver（官方）</a>
+            <a class="mb mb-google" href="https://maps.google.com/?q=만족한상회+중문점+서귀포" target="_blank"><svg><use href="#pin"/></svg>Google</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 住宿 D1–D3 -->
+      <div class="event">
+        <div class="ev-icon ic-hotel">🏨</div>
+        <div class="ev-body">
+          <div class="ev-title">入住 Day1–Day3 住宿</div>
+          <div class="hotel-card">
+            <div class="hotel-tag">🏨 4/28–4/30 住宿（2晚）</div>
+            <div class="hotel-name">西歸浦 516路 277番街 45號</div>
+            <div class="hotel-addr">Jeju-do Seogwipo-si 516-ro 277beon-gil 45</div>
+          </div>
+          <div class="map-btns">
+            <a class="mb mb-naver" href="https://naver.me/I5wJlci8" target="_blank"><svg><use href="#pin"/></svg>Naver（官方）</a>
+            <a class="mb mb-google" href="https://maps.google.com/?q=Jeju+Seogwipo+516-ro+277beon-gil+45" target="_blank"><svg><use href="#pin"/></svg>Google</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ DAY 2 ══ -->
+
+  <div class="day d2">
+
+    <div class="day-head">
+
+      <div class="day-num"><span class="n">02</span><span class="w">Day</span></div>
+
+      <div class="day-info">
+
+        <div class="day-theme">牛島一日遊</div>
+
+        <div class="day-date">4 月 29 日（週三）· Udo Island</div>
+
+      </div>
+
+    </div>
+
+    <div class="events">
+
+ 
+
+      <div class="event">
+
+        <div class="ev-icon ic-eat">🍳</div>
+
+        <div class="ev-body"><div class="ev-time">07:30 – 08:30</div><div class="ev-title">飯店早餐（加購可選）</div></div>
+
+      </div>
+
+ 
+
+ 
+      <div class="event">
+        <div class="ev-icon ic-note">🚗</div>
+        <div class="ev-body">
+          <div class="ev-time">08:30</div>
+          <div class="ev-title">出發前往城山浦港(성산포항종합여객터미널)</div>
+          <div class="drive">🕐 車程約 1 小時 10 分鐘</div>
+          <div class="attr">
+            <div class="attr-tag">🚗 停車資訊</div>
+            <div class="attr-desc">城山浦港綜合客運碼頭設有大型收費停車場，位於售票大廳前方，停車空間充足。</div>
+          </div>
+                  <div class="map-btns">
+            <a class="mb mb-naver" onclick="openNaver('성산포항 우도 여객선터미널')"><svg><use href="#pin"/></svg>成山浦港 Naver</a>
+            <a class="mb mb-google" href="https://maps.google.com/?q=성산포항+여객선터미널+우도" target="_blank"><svg><use href="#pin"/></svg>Google</a>
+          </div>
+          
+        </div>
+      </div>
+ 
+      <div class="event">
+        <div class="ev-icon ic-ship">⛴</div>
+        <div class="ev-body">
+          <div class="ev-time">10:00</div>
+          <div class="ev-title">搭船前往牛島（視實際船班調整）</div>
+          <div class="attr">
+            <div class="attr-tag">📍 景點介紹</div>
+            <div class="attr-desc">濟州東北外島，以碧藍透明海水與白色珊瑚沙著稱。島上特產牛島花生冰淇淋，推薦租電動車繞島一圈欣賞四面海景，約需 3–4 小時。</div>
+          </div>
+          <!-- 牛島注意事項 -->
+          <div class="warn-card">
+            <div class="warn-tag">⚠ 牛島搭船 & 租車注意事項</div>
+            <div class="warn-item">成人來回船票約 💴 ₩10,500-$11,000。需填寫乘船申請書兩份（來回各一）並出示護照購買，航程約 10-15 分鐘，可抵達牛島的天津港或下牛目洞港。。</div>
+            <div class="warn-item">電動車電量必須低於 70% 才允許上船，出發前請確認電量。</div>
+            <div class="warn-item">租三輪車（전동킥보드類）需持有國際駕照 A 章（機車類），請事先確認是否有效。</div>
+          </div>
+          <div class="map-btns">
+            <a class="mb mb-naver" onclick="openNaver('우도')"><svg><use href="#pin"/></svg>牛島 Naver</a>
+            <a class="mb mb-google" href="https://maps.google.com/?q=우도+제주" target="_blank"><svg><use href="#pin"/></svg>Google</a>
+          </div>
+        </div>
+      </div>
+ 
+      <div class="event">
+        <div class="ev-icon ic-eat">🍔</div>
+        <div class="ev-body">
+          <div class="ev-time">午間</div>
+          <div class="ev-title">午餐：各自覓食，網友推薦漢堡、豬排、漢拏山炒飯或炸醬麵</div>
+          <div class="ev-desc">下午自由探索牛島，預計 17:00 搭船返回</div>
+          <div class="map-btns">
+            <a class="mb mb-naver" onclick="openNaver('우도 맛집')"><svg><use href="#pin"/></svg>牛島餐廳 Naver</a>
+            <a class="mb mb-google" href="https://maps.google.com/?q=우도+맛집" target="_blank"><svg><use href="#pin"/></svg>Google</a>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- 明珍鮑魚 -->
+
+      <div class="event">
+
+        <div class="ev-icon ic-eat">🦪</div>
+
+        <div class="ev-body">
+
+          <div class="ev-time">18:00</div>
+
+          <div class="ev-title">晚餐：明珍鮑魚（명진전복）</div>
+
+          <div class="resto">
+
+            <div class="resto-tag">🍽 餐廳資訊</div>
+
+            <div class="resto-desc">濟州最知名鮑魚專門店，菜單精簡四款：奶油烤鮑（₩30,000/500g 約11顆）、鮑魚石鍋飯（₩16,000）、鮑魚粥（₩13,000）、生鮑片，附贈現烤鯖魚，海邊享用極具在地感。</div>
+
+            <div class="price-row">
+
+              <span class="price-pill price-krw">💴 ₩15,000–30,000／人</span>
+
+              <span class="price-pill price-twd">🇹🇼 約 NT$350–700／人</span>
+
+            </div>
+
+            <div class="open-badge open-ok">✅ 4/29（三）營業 · 週二公休 · 09:30–21:30</div>
+
+          </div>
+
+          <div class="map-btns">
+
+            <a class="mb mb-naver" onclick="openNaver('명진전복')"><svg><use href="#pin"/></svg>Naver</a>
+
+            <a class="mb mb-google" href="https://maps.google.com/?q=명진전복+제주+구좌읍" target="_blank"><svg><use href="#pin"/></svg>Google</a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+ 
+
+    </div>
+
+  </div>
+
+  <!-- ══ DAY 3 ══ -->
+  <div class="day d3">
+    <div class="day-head">
+      <div class="day-num"><span class="n">03</span><span class="w">Day</span></div>
+      <div class="day-info">
+        <div class="day-theme">偶來市場 · 城山日出峰</div>
+        <div class="day-date">4 月 30 日（週四）· East Side</div>
+      </div>
+    </div>
+    <div class="events">
+
+      <div class="event">
+        <div class="ev-icon ic-go">🛍</div>
+        <div class="ev-body">
+          <div class="ev-time">09:00 – 09:30</div>
+          <div class="ev-title">出發 → 偶來市場（서귀포매일올레시장）</div>
+          <div class="attr">
+            <div class="attr-tag">📍 景點介紹</div>
+            <div class="attr-desc">서귀포最具人氣的傳統市場，雲集新鮮海產、在地特色小吃與農產品，是感受濟州庶民生活的最佳場所，早市從清晨開始熱鬧非凡。</div>
+          </div>
+          <div class="map-btns">
+            <a class="mb mb-naver" onclick="openNaver('서귀포 매일올레시장')"><svg><use href="#pin"/></svg>Naver</a>
+            <a class="mb mb-google" href="https://maps.google.com/?q=서귀포+매일올레시장" target="_blank"><svg><use href="#pin"/></svg>Google</a>
+          </div>
+
+          <div class="mkt">
+            <div class="mkt-tag">🥢 台灣旅客推薦必吃 TOP 3</div>
+            <div class="mkt-item">
+              <span class="mkt-no">01</span>
+              <div class="mkt-text">
+                <div class="mkt-name">오메기떡 — 老奶奶的年糕（할머니떡집）</div>
+                <div class="mkt-note">40年老店招牌，팥고물、흑임자等多種口味，Q彈有嚼勁，台灣旅客必買伴手禮，冷凍可保存一個月。約 ₩2,000–3,000/個（NT$46–70）。</div>
+                <div class="mkt-btns">
+                  <a class="mb mb-naver" onclick="openNaver('서귀포 올레시장 할머니떡집 오메기떡')"><svg><use href="#pin"/></svg>Naver</a>
+                  <a class="mb mb-google" href="https://maps.google.com/?q=서귀포+올레시장+오메기떡" target="_blank"><svg><use href="#pin"/></svg>Google</a>
+                </div>
+              </div>
+            </div>
+            <div class="mkt-item">
+              <span class="mkt-no">02</span>
+              <div class="mkt-text">
+                <div class="mkt-name">흑돼지 만두빵（黑豬肉烘焙包子）</div>
+                <div class="mkt-note">「제성제과 올레시장점」特製，以濟州黑豬肉＋在地蔬菜為餡料，外皮烘烤酥脆，台灣旅遊部落客多次推薦，剛出爐必吃。約 ₩2,500–3,500/個（NT$58–80）。</div>
+                <div class="mkt-btns">
+                  <a class="mb mb-naver" onclick="openNaver('제성제과 서귀포 올레시장')"><svg><use href="#pin"/></svg>Naver</a>
+                  <a class="mb mb-google" href="https://maps.google.com/?q=제성제과+서귀포+올레시장" target="_blank"><svg><use href="#pin"/></svg>Google</a>
+                </div>
+              </div>
+            </div>
+            <div class="mkt-item">
+              <span class="mkt-no">03</span>
+              <div class="mkt-text">
+                <div class="mkt-name">한라봉 주스（漢拏峰鮮榨果汁）</div>
+                <div class="mkt-note">台灣旅客一致推薦，現場鮮榨濟州特產漢拏峰柑橘，清甜解渴、果香濃郁，是偶來市場逛完必喝的一杯，幾乎每攤都有。約 ₩3,000–5,000/杯（NT$70–115）。</div>
+                <div class="mkt-btns">
+                  <a class="mb mb-naver" onclick="openNaver('서귀포 올레시장 한라봉주스')"><svg><use href="#pin"/></svg>Naver</a>
+                  <a class="mb mb-google" href="https://maps.google.com/?q=서귀포+올레시장+한라봉주스" target="_blank"><svg><use href="#pin"/></svg>Google</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="event">
+        <div class="ev-icon ic-go">🌋</div>
+        <div class="ev-body">
+          <div class="ev-time">14:00</div>
+          <div class="ev-title">海女表演 + 城山日出峰（성산일출봉）</div>
+          <div class="attr">
+            <div class="attr-tag">📍 景點介紹</div>
+            <div class="attr-desc">世界自然遺產，高約 180m 的火山口，登頂可俯瞰全景。山腳下定時舉行海女捕撈表演，可親眼見識濟州女性海女文化。有時間可加遊涉地可支海岬。</div>
+          </div>
+          <div class="map-btns">
+            <a class="mb mb-naver" onclick="openNaver('성산일출봉')"><svg><use href="#pin"/></svg>城山日出峰 Naver</a>
+            <a class="mb mb-google" href="https://maps.google.com/?q=성산일출봉" target="_blank"><svg><use href="#pin"/></svg>Google</a>
+            <a class="mb mb-naver" onclick="openNaver('섭지코지')"><svg><use href="#pin"/></svg>涉地可支 Naver</a>
+            <a class="mb mb-google" href="https://maps.google.com/?q=섭지코지+제주" target="_blank"><svg><use href="#pin"/></svg>Google</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 피갈회옥 -->
+      <div class="event">
+        <div class="ev-icon ic-eat">🐡</div>
+        <div class="ev-body">
+          <div class="ev-time">18:00</div>
+          <div class="ev-title">晚餐：피갈회옥（海鮮生魚料理）</div>
+          <div class="resto">
+            <div class="resto-tag">🍽 餐廳資訊</div>
+            <div class="resto-desc">섭지코지附近，名稱源自「外貌粗糙但內含美玉」之意。招牌套餐含鯖魚刺身、銀白帶魚刺身、광어、참돔、딱새우等多款海鮮，以原木溫馨裝潢呈現濟州風情。</div>
+            <div class="price-row">
+              <span class="price-pill price-krw">💴 ₩25,000–40,000／人</span>
+              <span class="price-pill price-twd">🇹🇼 約 NT$580–930／人</span>
+            </div>
+            <div class="open-badge open-ok">✅ 4/30（四）營業 · 建議提前確認</div>
+          </div>
+          <div class="map-btns">
+            <a class="mb mb-naver" onclick="openNaver('피갈회옥 성산')"><svg><use href="#pin"/></svg>Naver</a>
+            <a class="mb mb-google" href="https://maps.google.com/?q=피갈회옥+서귀포+성산읍" target="_blank"><svg><use href="#pin"/></svg>Google</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 換住宿提醒 -->
+      <div class="event">
+        <div class="ev-icon ic-hotel">🧳</div>
+        <div class="ev-body">
+          <div class="ev-title">🌙 晚間提醒：整理行李，明天換住宿！</div>
+          <div class="ev-desc">明日（5/1）<strong>中午 12:00 前</strong>需退房，新住宿 Regent Marine 濟州最早 <strong>15:00 後</strong>才可入住，請提前打包好行李。</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ DAY 4 ══ -->
+  <div class="day d4">
+    <div class="day-head">
+      <div class="day-num"><span class="n">04</span><span class="w">Day</span></div>
+      <div class="day-info">
+        <div class="day-theme">東部漫遊 · 入住新飯店</div>
+        <div class="day-date">5 月 1 日（週五）· East Jeju · 下午 15:00 後 check-in</div>
+      </div>
+    </div>
+    <div class="events">
+
+      <div class="event">
+        <div class="ev-icon ic-hotel">🏨</div>
+        <div class="ev-body">
+          <div class="ev-time">中午前退房 · 15:00 後入住</div>
+          <div class="ev-title">入住 Regent Marine 濟州</div>
+          <div class="warn-card" style="margin-top:.4rem;">
+            <div class="warn-tag">🏨 住宿注意事項</div>
+            <div class="warn-item"><strong>5/1 中午 12:00 前</strong>須完成退房（上一間住宿）</div>
+            <div class="warn-item">Regent Marine <strong>最早 15:00 後</strong>才可 check-in，若有需要，行李可先寄放大廳</div>
+          </div>
+          <div class="hotel-card">
+            <div class="hotel-tag">🏨 4/30 預訂 · 5/1–5/2 入住（2晚）</div>
+            <div class="hotel-name">Regent Marine 濟州（리젠트마린 더 호텔）</div>
+            <div class="hotel-addr">濟州市 健入洞 1443 · Jeju-si Geonaib-dong 1443</div>
+          </div>
+          <div class="map-btns">
+            <a class="mb mb-naver" href="https://naver.me/5qLPsAET" target="_blank"><svg><use href="#pin"/></svg>Naver（官方）</a>
+            <a class="mb mb-google" href="https://maps.google.com/?q=Regent+Marine+The+Hotel+Jeju+건입동" target="_blank"><svg><use href="#pin"/></svg>Google</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 山房山 -->
+      <div class="event">
+        <div class="ev-icon ic-warn">🧳</div>
+        <div class="ev-body">
+          <div class="ev-time">09:30</div>
+          <div class="ev-desc">今日 Regent Marine 下午 3 點後才能入住，行李預計先放在車上。</div>
+        </div>
+      </div>
+
+      <!-- 山房山 -->
+      <div class="event">
+        <div class="ev-icon ic-go">⛰</div>
+        <div class="ev-body">
+          <div class="ev-time">10:30</div>
+          <div class="ev-title">山房山（산방산）</div>
+          <div class="drive">🕐 車程約 40 分鐘</div>
+          <div class="attr">
+            <div class="attr-tag">📍 景點介紹</div>
+            <div class="attr-desc">濟州西南部標誌性圓頂火山（海拔 395m），山腰有祭祀海神的山房窟寺（동굴법당），可俯瞰龍頭海岸與壯闊大海，是濟州最具代表的火山地貌景點之一。</div>
+          </div>
+          <div class="map-btns">
+            <a class="mb mb-naver" onclick="openNaver('산방산')"><svg><use href="#pin"/></svg>Naver</a>
+            <a class="mb mb-google" href="https://maps.google.com/?q=산방산+제주" target="_blank"><svg><use href="#pin"/></svg>Google</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 두리둠비 -->
+      <div class="event">
+        <div class="ev-icon ic-eat">🫕</div>
+        <div class="ev-body">
+          <div class="ev-time">12:00</div>
+          <div class="ev-title">午餐：두리둠비（手工豆腐鍋）</div>
+          <div class="drive">🕐 車程約 15 分鐘（位於中文觀光單地）</div>
+          <div class="resto">
+            <div class="resto-tag">🍽 餐廳資訊</div>
+            <div class="resto-desc">每日清晨現做手工豆腐（「둠비」即제주語「豆腐」），提供黑豬肉豆腐鍋、蛤蜊豆腐鍋、豆腐王餃子火鍋等，清爽健康，適合闔家，早上 8 點即開門。</div>
+            <div class="price-row">
+              <span class="price-pill price-krw">💴 ₩10,000–15,000／人</span>
+              <span class="price-pill price-twd">🇹🇼 約 NT$230–350／人</span>
+            </div>
+            <div class="open-badge open-ok">✅ 5/1（五）營業 · 週二公休 · 08:00–21:00</div>
+          </div>
+          <div class="map-btns">
+            <a class="mb mb-naver" onclick="openNaver('두리둠비 중문')"><svg><use href="#pin"/></svg>Naver</a>
+            <a class="mb mb-google" href="https://maps.google.com/?q=두리둠비+서귀포+중문" target="_blank"><svg><use href="#pin"/></svg>Google</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 鹿山路 -->
+      <div class="event">
+        <div class="ev-icon ic-go">🌿</div>
+        <div class="ev-body">
+          <div class="ev-time">14:00</div>
+          <div class="ev-title">鹿山路油菜花公路（녹산로）</div>
+          <div class="attr">
+            <div class="attr-tag">📍 景點介紹</div>
+            <div class="attr-desc">4–5 月油菜花盛開的夢幻公路，金黃花海綿延兩側，漢拏山為背景，是濟州春天最美的驅車風景線。5月初仍有機會看到盛開尾聲，適合駐車慢拍。</div>
+          </div>
+          <div class="map-btns">
+            <a class="mb mb-naver" onclick="openNaver('녹산로 유채꽃')"><svg><use href="#pin"/></svg>Naver</a>
+            <a class="mb mb-google" href="https://maps.google.com/?q=녹산로+유채꽃+제주" target="_blank"><svg><use href="#pin"/></svg>Google</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 咸德海灘 -->
+      <div class="event">
+        <div class="ev-icon ic-go">🏖</div>
+        <div class="ev-body">
+          <div class="ev-time">14:30</div>
+          <div class="ev-title">倫敦貝果 · 咸德海灘 · 犀牛峰 · 大蒜麵包</div>
+          <div class="attr">
+            <div class="attr-tag">📍 景點介紹</div>
+            <div class="attr-desc">咸德海灘是濟州北部最受歡迎的碧海沙灘，海水清澈見底。旁邊的犀牛峰（서우봉）奇岩地貌，附近聚集倫敦貝果博物館濟州店及知名大蒜麵包等網紅店。</div>
+          </div>
+          <div class="map-btns">
+            <a class="mb mb-naver" onclick="openNaver('함덕해수욕장')"><svg><use href="#pin"/></svg>咸德 N</a>
+            <a class="mb mb-google" href="https://maps.google.com/?q=함덕해수욕장" target="_blank"><svg><use href="#pin"/></svg>G</a>
+            <a class="mb mb-naver" onclick="openNaver('런던베이글뮤지엄 제주')"><svg><use href="#pin"/></svg>倫敦貝果 N</a>
+            <a class="mb mb-google" href="https://maps.google.com/?q=런던베이글뮤지엄+제주" target="_blank"><svg><use href="#pin"/></svg>G</a>
+            <a class="mb mb-naver" onclick="openNaver('제주 마늘빵 함덕')"><svg><use href="#pin"/></svg>大蒜麵包 N</a>
+            <a class="mb mb-google" href="https://maps.google.com/?q=제주+마늘빵+함덕" target="_blank"><svg><use href="#pin"/></svg>G</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="event">
+        <div class="ev-icon ic-eat">🍽</div>
+        <div class="ev-body">
+          <div class="ev-time">18:00</div>
+          <div class="ev-title">晚餐（待定）</div>
+          <div class="map-btns">
+            <a class="mb mb-naver" onclick="openNaver('함덕 맛집')"><svg><use href="#pin"/></svg>咸德餐廳 Naver</a>
+            <a class="mb mb-google" href="https://maps.google.com/?q=함덕+맛집" target="_blank"><svg><use href="#pin"/></svg>Google</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ DAY 5 ══ -->
+  <div class="day d5">
+    <div class="day-head">
+      <div class="day-num"><span class="n">05</span><span class="w">Day</span></div>
+      <div class="day-info">
+        <div class="day-theme">市區自由行</div>
+        <div class="day-date">5 月 2 日（週六）· Jeju City</div>
+      </div>
+    </div>
+    <div class="events">
+
+      <!-- 新濟州逛街 -->
+      <div class="event">
+        <div class="ev-icon ic-go">🏬</div>
+        <div class="ev-body">
+          <div class="ev-title">新濟州區逛街（蓮洞・老衡洞）</div>
+          <div class="attr">
+            <div class="attr-tag">📍 景點介紹</div>
+            <div class="attr-desc">以蓮洞、老衡洞為中心的現代購物區，聚集各大品牌服飾、美容旗艦店與連鎖咖啡，是濟州最熱鬧的商業地帶，逛街購物首選。</div>
+          </div>
+          <div class="map-btns">
+            <a class="mb mb-naver" onclick="openNaver('제주 신제주 연동 쇼핑')"><svg><use href="#pin"/></svg>Naver</a>
+            <a class="mb mb-google" href="https://maps.google.com/?q=제주+연동+쇼핑거리" target="_blank"><svg><use href="#pin"/></svg>Google</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 東門市場 -->
+      <div class="event">
+        <div class="ev-icon ic-eat">🥘</div>
+        <div class="ev-body">
+          <div class="ev-time">13:00</div>
+          <div class="ev-title">午餐：東門市場吃吃喝喝（제주 동문시장）</div>
+          <div class="attr">
+            <div class="attr-tag">📍 景點介紹</div>
+            <div class="attr-desc">創立於 1945 年的百年老市場，濟州最具歷史的傳統市集。鮮活海產、在地農產、各式街頭炸物應有盡有，下午亦有야시장（夜市）可逛，最能感受濟州庶民生活。</div>
+          </div>
+          <div class="map-btns">
+            <a class="mb mb-naver" onclick="openNaver('제주 동문시장')"><svg><use href="#pin"/></svg>Naver</a>
+            <a class="mb mb-google" href="https://maps.google.com/?q=제주+동문재래시장" target="_blank"><svg><use href="#pin"/></svg>Google</a>
+          </div>
+
+          <div class="mkt">
+            <div class="mkt-tag">🥢 台灣旅客推薦必吃 TOP 3</div>
+            <div class="mkt-item">
+              <span class="mkt-no">01</span>
+              <div class="mkt-text">
+                <div class="mkt-name">딱새우회（活딱새우刺身）</div>
+                <div class="mkt-note">東門市場「우리수산」等攤位現撈現剝，台灣旅客必吃評價極高！肉質軟嫩甜美是濟州限定鮮味，小份約 ₩10,000 + 上座費 ₩3,000（NT$300）。</div>
+                <div class="mkt-btns">
+                  <a class="mb mb-naver" onclick="openNaver('동문시장 우리수산 딱새우')"><svg><use href="#pin"/></svg>Naver</a>
+                  <a class="mb mb-google" href="https://maps.google.com/?q=동문시장+딱새우회+우리수산" target="_blank"><svg><use href="#pin"/></svg>Google</a>
+                </div>
+              </div>
+            </div>
+            <div class="mkt-item">
+              <span class="mkt-no">02</span>
+              <div class="mkt-text">
+                <div class="mkt-name">아베베베이커리 크림도넛（創意甜甜圈）</div>
+                <div class="mkt-note">동문시장 12번 게이트旁，台灣旅遊部落格高頻推薦！以濟州有機食材製作，흑임자（黑芝麻）、청귤（青橘）等특色口味，冷凍可保存30天，超人氣伴手禮。約 ₩3,500/個（NT$80）。</div>
+                <div class="mkt-btns">
+                  <a class="mb mb-naver" onclick="openNaver('아베베베이커리 동문시장')"><svg><use href="#pin"/></svg>Naver</a>
+                  <a class="mb mb-google" href="https://maps.google.com/?q=아베베베이커리+제주+동문시장" target="_blank"><svg><use href="#pin"/></svg>Google</a>
+                </div>
+              </div>
+            </div>
+            <div class="mkt-item">
+              <span class="mkt-no">03</span>
+              <div class="mkt-text">
+                <div class="mkt-name">랍스터 마농구이（大蒜烤龍蝦）</div>
+                <div class="mkt-note">야시장 8번 게이트「청년미남들」，台灣旅客最愛야시장美食第一名！大蒜奶油香烤龍蝦，半隻 ₩9,000、整隻 ₩18,000（NT$415），CP值超高，必排！</div>
+                <div class="mkt-btns">
+                  <a class="mb mb-naver" onclick="openNaver('청년미남들 동문시장 랍스터')"><svg><use href="#pin"/></svg>Naver</a>
+                  <a class="mb mb-google" href="https://maps.google.com/?q=동문시장+랍스터+청년미남들" target="_blank"><svg><use href="#pin"/></svg>Google</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 徒步區 -->
+      <div class="event">
+        <div class="ev-icon ic-go">🚶</div>
+        <div class="ev-body">
+          <div class="ev-title">徒步區 · 中央地下街 · 七星商圈</div>
+          <div class="attr">
+            <div class="attr-tag">📍 景點介紹</div>
+            <div class="attr-desc">濟州市中心步行街區，七星路是充滿生活氣息的購物商圈，中央地下街集結飾品、服飾小店，適合慢慢閒逛與購買伴手禮，夜晚尤其熱鬧。</div>
+          </div>
+          <div class="map-btns">
+            <a class="mb mb-naver" onclick="openNaver('제주 칠성로 상점가')"><svg><use href="#pin"/></svg>七星路 Naver</a>
+            <a class="mb mb-google" href="https://maps.google.com/?q=제주+칠성로+상점가" target="_blank"><svg><use href="#pin"/></svg>Google</a>
+            <a class="mb mb-naver" onclick="openNaver('제주시 중앙지하상가')"><svg><use href="#pin"/></svg>地下街 Naver</a>
+            <a class="mb mb-google" href="https://maps.google.com/?q=제주시+중앙지하상가" target="_blank"><svg><use href="#pin"/></svg>Google</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 돈사돈 -->
+      <div class="event">
+        <div class="ev-icon ic-eat">🐷</div>
+        <div class="ev-body">
+          <div class="ev-time">18:00</div>
+          <div class="ev-title">晚餐：豚舍豚本店（돈사돈 본점）</div>
+          <div class="resto">
+            <div class="resto-tag">🍽 餐廳資訊</div>
+            <div class="resto-desc">登上「水曜美食회」的黑豬肉名店（2006年創立）。以連炭火烤厚切黑豬整塊肉，外焦內嫩，搭配鯷魚醬（멜젓）蘸食，最後以泡菜鍋收尾，完美一餐。平日也常排隊，建議提早到場。</div>
+            <div class="price-row">
+              <span class="price-pill price-krw">💴 ₩30,000–50,000／人</span>
+              <span class="price-pill price-twd">🇹🇼 約 NT$650–850／人</span>
+            </div>
+            <div class="open-badge open-ok">✅ 5/2（六）營業 · 週二公休 · 12:00–22:00</div>
+          </div>
+          <div class="map-btns">
+            <a class="mb mb-naver" onclick="openNaver('돈사돈 본점 제주')"><svg><use href="#pin"/></svg>Naver</a>
+            <a class="mb mb-google" href="https://maps.google.com/?q=돈사돈+본점+제주시+우평로" target="_blank"><svg><use href="#pin"/></svg>Google</a>
+          </div>
+          <div class="ev-desc" style="margin-top:.4rem">餐後前往樂天超市逛街購物</div>
+        </div>
+      </div>
+
+      <!-- 롯데마트 -->
+      <div class="event">
+        <div class="ev-icon ic-go">🛒</div>
+        <div class="ev-body">
+          <div class="ev-title">晚餐後逛街：롯데마트 제주점（樂天超市濟州店）</div>
+          <div class="attr">
+            <div class="attr-tag">🛒 逛街資訊</div>
+            <div class="attr-desc">濟州最大型樂天超市，零食、泡麵、韓妝、濟州伴手禮一網打盡，是出發前採購的最佳補貨站。</div>
+          </div>
+          <div style="margin-top:.4rem;display:inline-flex;align-items:center;gap:.3rem;font-family:'DM Mono',monospace;font-size:.6rem;color:var(--ok);background:rgba(46,139,87,.08);border:1px solid rgba(46,139,87,.22);border-radius:5px;padding:.2rem .5rem;">
+            🕐 營業時間：10:00–23:00（每月 2・4 週日公休）
+          </div>
+          <div class="map-btns">
+            <a class="mb mb-naver" onclick="openNaver('롯데마트 제주점')"><svg><use href="#pin"/></svg>Naver</a>
+            <a class="mb mb-google" href="https://maps.google.com/?q=롯데마트+제주점" target="_blank"><svg><use href="#pin"/></svg>Google</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ DAY 6 ══ -->
+  <div class="day d6">
+    <div class="day-head">
+      <div class="day-num"><span class="n">06</span><span class="w">Day</span></div>
+      <div class="day-info">
+        <div class="day-theme">回程日</div>
+        <div class="day-date">5 月 3 日（週日）· Homeward</div>
+      </div>
+    </div>
+    <div class="events">
+
+      <div class="event">
+        <div class="ev-icon ic-note">🚗</div>
+        <div class="ev-body">
+          <div class="ev-time">08:30</div>
+          <div class="ev-title">退房 → 還車 → 搭接駁車前往濟州國際機場</div>
+          <div class="map-btns">
+            <a class="mb mb-naver" onclick="openNaver('제주국제공항')"><svg><use href="#pin"/></svg>濟州機場 Naver</a>
+            <a class="mb mb-google" href="https://maps.google.com/?q=제주국제공항" target="_blank"><svg><use href="#pin"/></svg>Google</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="event">
+        <div class="ev-icon ic-ship">✈</div>
+        <div class="ev-body">
+          <div class="ev-title">IT 655 返程航班</div>
+          <div class="ev-desc">10:40 起飛 → 11:45 抵達 · 一路平安，好好休息！🎉</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <strong>濟州島 · Jeju · 제주도 2026</strong>
+  2026 / 4 / 28（二）— 5 / 3（日）&nbsp;·&nbsp; 人生亂成一鍋粥&nbsp;·&nbsp; 有時生活在濟州
+</footer>
+
+<script>
+function openNaver(q){
+  const enc=encodeURIComponent(q);
+  const app=`nmap://search?query=${enc}&appname=jeju.travel.2026`;
+  const web=`https://map.naver.com/p/search/${enc}`;
+  const t=Date.now();
+  window.location.href=app;
+  setTimeout(()=>{if(Date.now()-t<1500)window.open(web,'_blank');},800);
+}
+</script>
+</body>
+</html>    
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    
+    <!-- External JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>
