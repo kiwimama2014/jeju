@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>濟州島六天五夜 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;600;900&family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300;1,500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;600;900&family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300;1,500&family=DM+Mono:wght@300;400&family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --ocean:#1b6fa8;--ocean-d:#0d4772;--sky:#5db8e8;
@@ -17,38 +17,100 @@
 html{scroll-behavior:smooth;}
 body{background:var(--paper);color:var(--ink);font-family:'Noto Serif TC',serif;font-weight:300;}
 
-/* ─── COVER ─── */
-.cover{
-  min-height:100vh;
-  background:linear-gradient(160deg,var(--ocean-d) 0%,#0a3d6a 45%,#1a5c1a 100%);
-  position:relative;overflow:hidden;
-  display:grid;grid-template-rows:auto 1fr auto;
-  padding:2.5rem 2.5rem 2rem;
+/* ─── COVER → replaced by HERO ─── */
+.cover{display:none;}
+
+/* ══════════════════════════════
+   HERO
+══════════════════════════════ */
+.hero{
+  position:relative;min-height:100vh;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  overflow:hidden;
+  background:linear-gradient(175deg,#7BB8D8 0%,#A8CDE0 38%,#B8C9E0 58%,#C9A8C8 78%,#F0EFF8 100%);
 }
-.cover::before{
+.hero::before{
   content:'';position:absolute;inset:0;
   background:
-    radial-gradient(ellipse 70% 40% at 50% 85%,rgba(245,197,24,.18) 0%,transparent 60%),
-    radial-gradient(ellipse 50% 30% at 80% 10%,rgba(93,184,232,.12) 0%,transparent 50%),
-    radial-gradient(ellipse 30% 20% at 10% 90%,rgba(245,197,24,.08) 0%,transparent 40%);
+    radial-gradient(ellipse 420px 300px at 20% 80%,rgba(201,168,200,.45) 0%,transparent 70%),
+    radial-gradient(ellipse 300px 220px at 75% 85%,rgba(184,201,224,.5) 0%,transparent 65%),
+    radial-gradient(ellipse 200px 150px at 50% 90%,rgba(240,239,248,.55) 0%,transparent 60%),
+    radial-gradient(ellipse 500px 180px at 50% 0%,rgba(255,255,255,.25) 0%,transparent 60%);
+  pointer-events:none;
 }
-.cover::after{
-  content:'';position:absolute;bottom:0;left:0;right:0;height:120px;
-  background:repeating-linear-gradient(90deg,rgba(245,197,24,.15) 0px,rgba(245,197,24,.15) 2px,transparent 2px,transparent 28px);
-  mask-image:linear-gradient(to top,rgba(0,0,0,.4),transparent);
+.hero::after{
+  content:'';position:absolute;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  background-size:200px 200px;pointer-events:none;opacity:.6;
 }
-.cover-top{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:flex-start;}
-.cover-tag{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.25em;color:var(--canola);text-transform:uppercase;}
-.cover-main{position:relative;z-index:1;display:flex;flex-direction:column;justify-content:center;padding:1.5rem 0;}
-.cover-eyebrow{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.3em;color:rgba(255,255,255,.45);text-transform:uppercase;margin-bottom:1.2rem;}
-.cover-title{font-family:'Cormorant Garamond',serif;font-size:clamp(3.5rem,13vw,7.5rem);font-weight:300;color:#fff;line-height:1;letter-spacing:-.01em;}
-.cover-title em{font-style:italic;color:var(--canola);font-size:.55em;display:block;margin-top:.2em;letter-spacing:.05em;}
-.cover-line{width:44px;height:2px;background:var(--canola);margin:1.8rem 0;opacity:.7;}
-.cover-meta{display:flex;gap:2rem;flex-wrap:wrap;}
-.meta-item .lbl{font-family:'DM Mono',monospace;font-size:.52rem;letter-spacing:.2em;color:rgba(255,255,255,.35);text-transform:uppercase;display:block;margin-bottom:.25rem;}
-.meta-item .val{color:rgba(255,255,255,.85);font-size:.88rem;font-weight:400;}
-.cover-bottom{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:flex-end;border-top:1px solid rgba(255,255,255,.1);padding-top:1.2rem;font-family:'DM Mono',monospace;font-size:.55rem;color:rgba(255,255,255,.2);letter-spacing:.15em;}
+.hero-content{position:relative;z-index:2;text-align:center;display:flex;flex-direction:column;align-items:center;animation:fadeUp 1.4s ease both;}
+.hero-eyebrow{font-family:'Caveat',cursive;font-size:clamp(1rem,2.5vw,1.35rem);color:rgba(255,255,255,.82);letter-spacing:.18em;margin-bottom:.5rem;animation:fadeUp 1.4s .1s ease both;}
+.hero-title{font-family:'Noto Serif TC',serif;font-size:clamp(3.2rem,9vw,7rem);font-weight:300;color:#4A3F5C;line-height:1.1;letter-spacing:.18em;text-shadow:0 2px 24px rgba(74,63,92,.2),0 1px 8px rgba(74,63,92,.15);animation:fadeUp 1.4s .2s ease both;}
+.hero-sub{font-family:'Noto Serif TC',serif;font-size:clamp(.95rem,2.2vw,1.3rem);font-weight:300;color:#2C4A5E ;letter-spacing:.22em;margin-top:.6rem;animation:fadeUp 1.4s .35s ease both;}
+.hero-divider{width:80px;height:1.5px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.7),transparent);margin:1.4rem auto;animation:fadeUp 1.4s .45s ease both;}
+.hero-meta{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem 1.6rem;animation:fadeUp 1.4s .55s ease both;}
+.hero-meta span{font-family:'Noto Serif TC',serif;font-size:clamp(.78rem,1.5vw,.9rem);font-weight:300;color:rgba(255,255,255,.8);letter-spacing:.18em;}
+.hero-meta span::before{content:'·';margin-right:.6rem;opacity:.6;}
+.hero-meta span:first-child::before{content:'';margin:0;}
+.hero-date-badge{margin-top:2rem;padding:.55rem 1.6rem;border:1px solid rgba(255,255,255,.45);border-radius:50px;backdrop-filter:blur(8px);background:rgba(255,255,255,.15);font-family:'Noto Serif TC',serif;font-size:clamp(.85rem,1.8vw,1rem);font-weight:300;color:rgba(255,255,255,.92);letter-spacing:.14em;animation:fadeUp 1.4s .7s ease both;transition:background .3s;}
+.hero-date-badge:hover{background:rgba(255,255,255,.25);}
+.petal{position:absolute;border-radius:50%;background:rgba(255,255,255,.18);animation:float linear infinite;pointer-events:none;}
+.petal:nth-child(1){width:14px;height:14px;left:12%;top:20%;animation-duration:9s;animation-delay:0s;}
+.petal:nth-child(2){width:9px;height:9px;left:28%;top:65%;animation-duration:13s;animation-delay:2s;}
+.petal:nth-child(3){width:18px;height:18px;left:60%;top:15%;animation-duration:11s;animation-delay:1s;}
+.petal:nth-child(4){width:7px;height:7px;left:80%;top:55%;animation-duration:15s;animation-delay:3.5s;}
+.petal:nth-child(5){width:12px;height:12px;left:45%;top:75%;animation-duration:10s;animation-delay:5s;}
+.petal:nth-child(6){width:6px;height:6px;left:90%;top:30%;animation-duration:14s;animation-delay:1.5s;}
+@keyframes float{0%{transform:translateY(0) rotate(0deg);opacity:.6;}50%{transform:translateY(-28px) rotate(180deg);opacity:1;}100%{transform:translateY(0) rotate(360deg);opacity:.6;}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
+.scroll-hint{position:absolute;bottom:2.2rem;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:.4rem;opacity:.6;animation:fadeUp 1.4s 1s ease both;}
+.scroll-hint span{font-family:'Noto Serif TC',serif;font-size:.7rem;letter-spacing:.22em;color:white;}
+.scroll-arrow{width:20px;height:20px;border-right:1.5px solid white;border-bottom:1.5px solid white;transform:rotate(45deg);animation:bounce 1.8s ease-in-out infinite;}
+@keyframes bounce{0%,100%{transform:rotate(45deg) translateY(0);}50%{transform:rotate(45deg) translateY(5px);}}
 
+/* ── 銜接橋 Hero → 公費 ── */
+.bridge{height:80px;background:linear-gradient(to bottom,#F0EFF8,#EBF0F7);}
+
+/* ══════════════════════════════
+   公費區塊（新樣式）
+══════════════════════════════ */
+.budget-box-new{background-color:#EBF0F7;padding:3rem 1.5rem 4rem;}
+.budget-box-new .fee-inner{max-width:680px;margin:0 auto;}
+.budget-box-new .fee-title{font-family:'Noto Serif TC',serif;font-size:clamp(1.3rem,4vw,1.75rem);font-weight:400;color:#3A5A72;letter-spacing:.1em;margin-bottom:1rem;}
+.budget-box-new .fee-desc{font-family:'Noto Serif TC',serif;font-size:clamp(.85rem,2vw,.95rem);font-weight:300;color:#4A5568;line-height:1.9;letter-spacing:.05em;margin-bottom:.5rem;}
+.budget-box-new .fee-warning{font-family:'Noto Serif TC',serif;font-size:clamp(.82rem,1.8vw,.9rem);font-weight:300;color:#8A6A3A;letter-spacing:.05em;margin-bottom:1.8rem;}
+.fee-cards-new{display:flex;flex-direction:column;gap:.85rem;margin-bottom:1.4rem;}
+.fee-card-new{background:rgba(255,255,255,.78);border:1px solid rgba(184,201,224,.5);border-radius:14px;padding:1.2rem 1.5rem 1rem;}
+.fee-card-new .fc-label{font-family:'Noto Serif TC',serif;font-size:.75rem;font-weight:300;color:#7A8FA0;letter-spacing:.14em;margin-bottom:.25rem;}
+.fee-card-new .fc-val{font-family:'Noto Serif TC',serif;font-size:clamp(1.6rem,5vw,2.2rem);font-weight:300;color:#2E6E8E;line-height:1.15;}
+.fee-card-new .fc-val.purple{color:#6A5A8E;}
+.fee-card-new .fc-sub{font-family:'Noto Serif TC',serif;font-size:.76rem;font-weight:300;color:#7A8FA0;letter-spacing:.1em;margin-top:.2rem;}
+.fee-note-new{background:rgba(255,255,255,.55);border-left:3px solid #B8C9E0;border-radius:0 10px 10px 0;padding:1rem 1.2rem;font-family:'Noto Serif TC',serif;font-size:clamp(.8rem,1.8vw,.88rem);font-weight:300;color:#4A5568;line-height:1.9;letter-spacing:.04em;}
+
+/* ── 銜接橋 公費 → 航班（短版） ── */
+.bridge-flight{height:5px;background:linear-gradient(to bottom,#EBF0F7,#3A5A72);}
+
+/* ══════════════════════════════
+   航班區塊（方案 B 深藍紫漸層）
+══════════════════════════════ */
+.flights-new{background:linear-gradient(135deg,#3A5A72 0%,#5A4A7A 100%);padding:2.5rem 1.5rem 2.8rem;}
+.flights-new .fl-inner{max-width:680px;margin:0 auto;}
+.flights-new .fl-airline{font-family:'Noto Serif TC',serif;font-size:.68rem;font-weight:300;color:rgba(255,255,255,.5);letter-spacing:.22em;text-align:center;margin-bottom:1.4rem;}
+.flights-new .fl-grid{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:.5rem 1rem;}
+.flights-new .fl-tag{font-family:'Noto Serif TC',serif;font-size:.63rem;font-weight:300;color:rgba(255,255,255,.5);letter-spacing:.2em;margin-bottom:.2rem;}
+.flights-new .fl-num{font-family:'Noto Serif TC',cursive;font-size:clamp(2.8rem,9vw,4rem);font-weight:700;color:#fff;line-height:1;}
+.flights-new .fl-detail{font-family:'Noto Serif TC',serif;font-size:clamp(.72rem,1.8vw,.82rem);font-weight:300;color:rgba(255,255,255,.75);line-height:1.8;letter-spacing:.06em;margin-top:.4rem;}
+.flights-new .fl-right{text-align:right;}
+.flights-new .fl-arr{display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:rgba(255,255,255,.4);}
+.flights-new .fl-rule{grid-column:1/-1;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.15),transparent);margin-top:1.4rem;}
+
+/* hide old sections */
+.budget-box,.flights,.notice-bar{display:none;}
+
+@media(max-width:500px){
+  .budget-box-new{padding:2.5rem 1.2rem 3rem;}
+  .flights-new{padding:2rem 1.2rem 2.4rem;}
+}
 /* ─── NOTICE BANNER ─── */
 .notice-bar{
   background:linear-gradient(90deg,#2a1a6e,#4a2a9e);
@@ -211,78 +273,82 @@ footer strong{display:block;font-family:'Cormorant Garamond',serif;font-size:1.2
 </head>
 <body>
 
-<!-- ─── COVER ─── -->
-<section class="cover">
-  <div class="cover-top">
-    <span class="cover-tag">Travel Guide · 2026</span>
-    <span class="cover-tag">제주도 · Jeju</span>
-  </div>
-  <div class="cover-main">
-    <p class="cover-eyebrow">Jeju Island · Korea · 油菜花 × 大海</p>
-    <h1 class="cover-title">濟州島<em>六天五夜</em></h1>
-    <div class="cover-line"></div>
-    <div class="cover-meta">
-      <div class="meta-item"><span class="lbl">出發</span><span class="val">2026 / 4 / 28（週二）</span></div>
-      <div class="meta-item"><span class="lbl">返回</span><span class="val">2026 / 5 / 3（週日）</span></div>
-      <div class="meta-item"><span class="lbl">人數</span><span class="val">11 大 2 小</span></div>
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="petal"></div><div class="petal"></div><div class="petal"></div>
+  <div class="petal"></div><div class="petal"></div><div class="petal"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Travel Guide · 2026</p>
+    <h1 class="hero-title">濟州島</h1>
+    <p class="hero-sub">제주도 · Jeju · 六天五夜</p>
+    <div class="hero-divider"></div>
+    <div class="hero-meta">
+      <span>Jeju Island</span><span>Korea</span>
+      <span>油菜花 × 大海</span><span>11大 2小</span>
     </div>
-  </div>
-  <div class="cover-bottom">
-    <span>JEJU · 제주도 · 濟州島</span>
-    <span>6D 5N · 13 TRAVELERS</span>
+    <div class="hero-date-badge">2026 / 4 / 28（二）&nbsp;—&nbsp;5 / 3（日）</div>
   </div>
 </section>
 
-<!-- ─── 公費預算 ─── -->
-<div class="budget-box">
-  <div class="budget-title">💰 飲食公費</div>
-  <div class="budget-subtitle">
-    本團共 <strong>11 大 2 小</strong>（1 位國小生 + 1 位嬰兒）。韓國餐廳大多有低消規定，<strong>國小以上學童需點一份主餐</strong>，建議以 <strong>12 人</strong>估算（嬰兒除外）。<br>
-    ⚠️ <strong>國小生暫定繳交₩100,000</strong>
-  </div>
-  <div class="budget-grid">
-    <div class="budget-card">
-      <span class="bc-label">成人每人（韓幣）</span>
-      <div class="bc-val">₩200,000</div>
-      <div class="bc-sub">11 位大人 × ₩200,000</div>
-    </div>
-    <div class="budget-card">
-      <span class="bc-label">國小生（韓幣）</span>
-      <div class="bc-val">₩100,000</div>
-    </div>
-    <div class="budget-card">
-      <span class="bc-label">公費總額（台幣）</span>
-      <div class="bc-val">約NT$ 48,300</div>
-      <div class="bc-sub">11×4,200 + 1×2,100</div>
-    </div>
-    <div class="budget-card">
-      <span class="bc-label">公費總額（韓幣）</span>
-      <div class="bc-val">₩ 2,300,000</div>
-      <div class="bc-sub">11×₩200,000 + 1×₩100,000</div>
-    </div>
-  </div>
-  <div class="budget-note">
-    ⚠ 公費涵蓋行程中所有指定餐廳費用，餘額作為臨時備用金。市場小吃、咖啡、個人飲料等費用請各自承擔。嬰兒不計入。
-  <br>  ⚠ 請注意，wowpass有餘額上限₩1,000,000。
-  </div>
-</div>
+<!-- ══ 銜接橋 Hero → 公費 ══ -->
+<div class="bridge"></div>
 
-<!-- ─── FLIGHTS ─── -->
-<div class="flights">
-  <div class="fl">
-    <span class="ft">去程 Outbound · 台灣虎航</span>
-    <div class="fn">IT 654</div>
-    <div class="ft2">✈ TPE T1 桃園國際機場 Terminal 1</div>
-    <div class="ft2">06:40 → CJU 09:35 &nbsp;·&nbsp; 04-28</div>
+<!-- ══ 公費區塊 ══ -->
+<section class="budget-box-new">
+  <div class="fee-inner">
+    <h2 class="fee-title">💰 飲食公費</h2>
+    <p class="fee-desc">本團共 11 大 2 小（1 位國小生 + 1 位嬰兒）。</p>
+    <p class="fee-warning">⚠️ 國小生暫定繳交 NT$3,500</p>
+    <div class="fee-cards-new">
+      <div class="fee-card-new">
+        <p class="fc-label">成人每人（台幣）</p>
+        <p class="fc-val">NT$5,000</p>
+        <p class="fc-sub">11 位大人 × NT$5,000</p>
+      </div>
+      <div class="fee-card-new">
+        <p class="fc-label">國小生（台幣）</p>
+        <p class="fc-val">NT$3,500</p>
+      </div>
+      <div class="fee-card-new">
+        <p class="fc-label">公費總額（台幣）</p>
+        <p class="fc-val purple">NT$58,500</p>
+        <p class="fc-sub">11×5,000 + 1×3,500</p>
+      </div>
+            <div class="fee-card-new">
+        <p class="fc-label">公費總額（韓幣）</p>
+        <p class="fc-val purple">₩2,735,000</p>
+      </div>
+    </div>
+    <div class="fee-note-new">
+      ⚠ 公費涵蓋行程中所有指定餐廳費用，餘額作為臨時備用金。市場小吃、咖啡、個人飲料等費用請各自承擔。嬰兒不計入。<br><br>
+      ⚠ 請注意，wowpass 有餘額上限 ₩1,000,000。
+    </div>
   </div>
-  <div class="fl-sep">⇄</div>
-  <div class="fl" style="text-align:right">
-    <span class="ft">回程 Return · 台灣虎航</span>
-    <div class="fn">IT 655</div>
-    <div class="ft2">✈ CJU 濟州國際機場</div>
-    <div class="ft2">10:40 → TPE 11:45 &nbsp;·&nbsp; 05-03</div>
+</section>
+
+<!-- ══ 銜接橋 公費 → 航班 ══ -->
+<div class="bridge-flight"></div>
+
+<!-- ══ 航班區塊 ══ -->
+<section class="flights-new">
+  <div class="fl-inner">
+    <p class="fl-airline">台灣虎航 · TIGERAIR TAIWAN</p>
+    <div class="fl-grid">
+      <div>
+        <p class="fl-tag">去程 OUTBOUND</p>
+        <p class="fl-num">IT 654</p>
+        <p class="fl-detail">✈ TPE T1 桃園國際機場<br>06:40 → CJU 09:35<br>04-28</p>
+      </div>
+      <div class="fl-arr">⇄</div>
+      <div class="fl-right">
+        <p class="fl-tag">回程 RETURN</p>
+        <p class="fl-num">IT 655</p>
+        <p class="fl-detail">✈ CJU 濟州國際機場<br>10:40 → TPE 11:45<br>05-03</p>
+      </div>
+      <div class="fl-rule"></div>
+    </div>
   </div>
-</div>
+</section>
 
 <!-- ─── ITINERARY ─── -->
 <div class="wrap">
@@ -733,31 +799,12 @@ footer strong{display:block;font-family:'Cormorant Garamond',serif;font-size:1.2
     <div class="events">
 
 
-      <!-- 山房山 -->
-      <div class="event">
-        <div class="ev-icon ic-go">⛰</div>
-        <div class="ev-body">
-          <div class="ev-time">9:30 </div>
-          <div class="ev-title">出發 → 山房山油菜花田（산방산유채꽃명소）</div>
-          <div class="drive">🕐 車程約 40 分鐘</div>
-          <div class="attr">
-            <div class="attr-tag">📍 景點介紹</div>
-            <div class="attr-desc">山房山周邊有一大片油菜花田，在花田內以山房山為背景，一次將油菜花田和山房山收進鏡頭內是山房山油菜花田最大的特色。</div>
-          </div>
-          <div class="map-btns">
-            <a class="mb mb-naver" onclick="openNaver('산방산유채꽃명소')"><svg><use href="#pin"/></svg>Naver</a>
-            <a class="mb mb-google" href="https://maps.google.com/?q=산방산유채꽃명소" target="_blank"><svg><use href="#pin"/></svg>Google</a>
-          </div>
-        </div>
-      </div>
-
       <!-- 두리둠비 -->
       <div class="event">
         <div class="ev-icon ic-eat">🫕</div>
         <div class="ev-body">
-          <div class="ev-time">12:00</div>
+          <div class="ev-time">10:00</div>
           <div class="ev-title">午餐：두리둠비（手工豆腐鍋）</div>
-          <div class="drive">🕐 車程約 15 分鐘（位於中文觀光單地）</div>
           <div class="resto">
             <div class="resto-tag">🍽 餐廳資訊</div>
             <div class="resto-desc">每日清晨現做手工豆腐（「둠비」即제주語「豆腐」），提供黑豬肉豆腐鍋、蛤蜊豆腐鍋、豆腐王餃子火鍋等，清爽健康，適合闔家，早上 8 點即開門。</div>
@@ -778,7 +825,7 @@ footer strong{display:block;font-family:'Cormorant Garamond',serif;font-size:1.2
       <div class="event">
         <div class="ev-icon ic-go">🌿</div>
         <div class="ev-body">
-          <div class="ev-time">14:00</div>
+          <div class="ev-time">12:00</div>
           <div class="ev-title">鹿山路油菜花公路（녹산로）</div>
           <div class="attr">
             <div class="attr-tag">📍 景點介紹</div>
@@ -795,7 +842,7 @@ footer strong{display:block;font-family:'Cormorant Garamond',serif;font-size:1.2
       <div class="event">
         <div class="ev-icon ic-go">🏖</div>
         <div class="ev-body">
-          <div class="ev-time">14:30</div>
+          <div class="ev-time">13:30</div>
           <div class="ev-title">倫敦貝果 · 咸德海灘 · 犀牛峰 · 大蒜麵包</div>
           <div class="attr">
             <div class="attr-tag">📍 景點介紹</div>
